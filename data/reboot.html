@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+ <html ng-app="config_app">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>RW-Security</title>
+
+	<link rel="stylesheet" href="demo.css"/>
+	<link rel="stylesheet" href="form-labels-on-top.css"/>
+
+</head>
+            <script src="angular.min.js"></script>
+            <script src="app.js"></script>
+
+
+	<header>
+		<h1>RW-Security</h1>
+        <h2>Watchdog 1.0</h2>
+    </header>
+
+    <ul>
+        <li><a href="/">Setup Wifi</a></li>
+        <li><a href="/recipients.html">Configure Recipients</a></li>
+        <li><a href="/reboot.html" class="active">Restart</a></li>
+    </ul>
+
+
+    <div class="main-content" ng-controller="RebootCtr as ctrl">
+
+        <!-- You only need this form and the form-labels-on-top.css -->
+
+        <form class="form-labels-on-top" method="post" action="#">
+
+            <div class="form-title-row">
+                <h1>Restart</h1>
+            </div>
+<!--
+               
+            <div class="form-row">
+                <label>
+                    <span>Checkbox</span>
+                    <input type="checkbox" name="checkbox" checked>
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label><span>Radio</span></label>
+                <div class="form-radio-buttons">
+
+                    <div>
+                        <label>
+                            <input type="radio" name="radio">
+                            <span>Radio option 1</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="radio" name="radio">
+                            <span>Radio option 2</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="radio" name="radio">
+                            <span>Radio option 3</span>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+            -->
+            <div class="form-row">
+               <button type="button" style="width:100%" ng-click="ctrl.finishWizard()">Save</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

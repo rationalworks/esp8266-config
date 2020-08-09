@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <html ng-app="config_app">
+        <head>
+            <script src="angular.min.js"></script>
+            <script src="app.js"></script>
+            <meta charset="utf-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <title>RW-Security</title>
+            <link rel="stylesheet" href="demo.css"/>
+            <link rel="stylesheet" href="form-labels-on-top.css"/>
+        </head>
+        <header>
+            <h1>RW-Security</h1>
+            <h2>Watchdog 1.0</h2>
+        </header>
+        <body>
+            <ul>
+                <li>
+                    <a href="/" class="active">Setup Wifi</a>
+                </li>
+                <li>
+                    <a href="/recipients.html">Configure Recipients</a>
+                </li>
+                <li>
+                    <a href="/reboot.html">Restart</a>
+                </li>
+            </ul>
+            <div class="main-content" ng-controller="WiFiSettingCtr as ctrl">
+                <!-- You only need this form and the form-labels-on-top.css -->
+                <form class="form-labels-on-top" method="post" action="#">
+                    <div class="form-title-row">
+                        <h1>Setup Wifi</h1>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Wifi network name (SSID)</span>
+                            <select name="selected_ssid" ng-model="ctrl.selected_ssid">
+                                <option ng-repeat="nw in ctrl.availableNetworks" value="{{nw}}">{{nw}}</option>
+                            </select>
+                            <button type="button" ng-click="ctrl.getAvailableNetwork()">🔍</button>
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Wifi password</span>
+                            <input type="text" name="ssid_password" ng-model="ctrl.ssid_password"/>
+                        </label>
+                    </div>
+                    <div class="form-row" ng-click="ctrl.saveNetworkSetting()">
+                        <button type="button" style="width:100%">Save</button>
+                    </div>
+                </form>
+            </div>
+        </body>
+    </html>
+    
